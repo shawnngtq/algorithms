@@ -7,3 +7,4 @@
 3) It should not accept pointer to pointer to head node.
 ```
 
+Link: http://www.geeksforgeeks.org/delete-a-given-node-in-linked-list-under-given-constraints/
