@@ -37,7 +37,7 @@ function LinkedList() {
 
 function mergeLinkedList(list1, list2) {
 
-  // C1: 1 of the list is empty
+  // if 1 of the list is empty
   // no change to the linked list
   if(list1.count == 0 || list2.count == 0) {
     console.log('1 of the list is empty');
@@ -46,7 +46,6 @@ function mergeLinkedList(list1, list2) {
   var head1 = list1.head;
   var head2 = list2.head;
 
-  // C2: both lists are of the same length
   while(head1 && head2) {
     var next1;
     var next2;
