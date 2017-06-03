@@ -13,14 +13,9 @@ def fibonacci(n, lookup):
 
   return lookup[n]
 
-def main():
-  n = 34
-  # lookup table with maximum n = 100
-  lookup = [None]*(101)
-  print('Fibonacci Number is ', fibonacci(n, lookup))
-
 print('Memoization: top down method')
-main()
+print('Fibonacci Number is ', fibonacci(34, [None]*(101)))
+
 
 
 
@@ -37,9 +32,5 @@ def fibonacci2(n):
     f[i] = f[i-1] + f[i-2]
   return f[n]
 
-def main2():
-  n = 9
-  print('Fibonacci number is ', fibonacci2(n))
-
 print('Tabulation: bottom up method')
-main2()
+print('Fibonacci Number is ', fibonacci(34))
