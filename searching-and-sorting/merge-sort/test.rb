@@ -12,6 +12,8 @@ def merge(arr, l, m, r)
   n1 = m-l+1
   n2 = r-m
 
+  # CAPITAL_LETTERS are treated as constants and 
+  # must not be dynamically assigned new values
   leftSubArr = [0]*n1
   rightSubArr = [0]*n2
 
