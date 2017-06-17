@@ -1,8 +1,8 @@
 class Node
   attr_accessor :char, :next
 
-  def initialize(key)
-    @char = key
+  def initialize(char)
+    @char = char
     @next = nil
   end
 end
