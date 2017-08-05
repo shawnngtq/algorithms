@@ -35,3 +35,6 @@ def bubbleSort(arr):
 
 arr = [64, 34, 25, 12, 22, 11, 90]
 print(bubbleSort(arr))
+
+arr = [2, 3, 3, 1, 5, 2]
+print(bubbleSort(arr))
