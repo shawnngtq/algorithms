@@ -1,0 +1,1 @@
+All the examples in this folder are taken from codefights (https://codefights.com).
