@@ -1,4 +1,4 @@
-### Given a linked list which is sorted, how will you insert in sorted way?
+## [Given a linked list which is sorted, how will you insert in sorted way?](http://www.geeksforgeeks.org/given-a-linked-list-which-is-sorted-how-will-you-insert-in-sorted-way/)
 
 Initial linked list:
 ```2 -> 5 -> 7 -> 10 -> 5```
@@ -13,5 +13,3 @@ After insertion:
 then make the new node the new head
 3) In a loop, put the new node(9) into appropriate position
 ```
-
-Link: http://www.geeksforgeeks.org/given-a-linked-list-which-is-sorted-how-will-you-insert-in-sorted-way/

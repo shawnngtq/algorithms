@@ -1,5 +1,4 @@
-### Merge a linked list into another linked list at alternate positions
----
+## [Merge a linked list into another linked list at alternate positions](http://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/)
 
 #### Before merge
 **Example 1**:
@@ -16,7 +15,6 @@
 2nd linked list:
 ```4 -> 5 -> 6 -> 7 -> 8```
 
----
 
 #### After merge
 **Example 1**:
@@ -32,7 +30,3 @@
 
 2nd linked list:
 ```7 -> 8```
-
----
-
-Link: http://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/

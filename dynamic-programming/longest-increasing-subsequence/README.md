@@ -1,4 +1,4 @@
-### Longest Increasing Subsequence
+## [Longest Increasing Subsequence](http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/)
 
 The Longest Increasing Subsequence (LIS) problem is to find the length of the longest subsequence of a given sequence such that all elements of the subsequence are sorted in increasing order.
 
@@ -26,5 +26,3 @@ The longest increasing subsequence is {3, 7, 40, 80}
 or
 - `L(i) = 1`, if no such j exists.
 To find the LIS for a given array, we need to return `max(L(i))` where `0 < i < n`.
-
-Link: http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/

@@ -1,4 +1,4 @@
-### Edit Distance
+## [Edit Distance](http://www.geeksforgeeks.org/dynamic-programming-set-5-edit-distance/)
 
 Given two strings str1 and str2 and below operations that can performed on str1. Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
 
@@ -30,5 +30,3 @@ Replace 'n' with 'r', insert t, insert a
 - Insert: Recur for m and n-1
 - Remove: Recur for m-1 and n
 - Replace: Recur for m-1 and n-1
-
-Link: http://www.geeksforgeeks.org/dynamic-programming-set-5-edit-distance/

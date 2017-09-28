@@ -1,4 +1,4 @@
-### Union and Intersection of two Linked Lists
+## [Union and Intersection of two Linked Lists](http://www.geeksforgeeks.org/union-and-intersection-of-two-linked-lists/)
 
 **Example**:
 ```
@@ -9,5 +9,3 @@ Output:
    Intersection List: 4->10
    Union List: 2->8->20->4->15->10
 ```
-
-Link: http://www.geeksforgeeks.org/union-and-intersection-of-two-linked-lists/

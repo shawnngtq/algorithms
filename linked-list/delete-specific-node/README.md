@@ -1,4 +1,4 @@
-### Delete a given node in Linked List under given constraints
+## [Delete a given node in Linked List under given constraints](http://www.geeksforgeeks.org/delete-a-given-node-in-linked-list-under-given-constraints/)
 
 **Constraints**:
 ```
@@ -6,5 +6,3 @@
 2) It should not return pointer to the head node.
 3) It should not accept pointer to pointer to head node.
 ```
-
-Link: http://www.geeksforgeeks.org/delete-a-given-node-in-linked-list-under-given-constraints/
