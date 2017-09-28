@@ -35,7 +35,7 @@ print('2**5=', power(2,5))
 
 
 # Iterative method
-# Time Complexity: O(n)
+# Time Complexity: O(log(n))
 def power(x, y):
   res = 1
   while(y > 0):
