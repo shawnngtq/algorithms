@@ -1,4 +1,4 @@
-# Given two integers x and n, write a function to compute xn. We may assume that x and n are small and overflow doesn’t happen
+# Given two integers x and n, write a function to compute x^n. We may assume that x and n are small and overflow doesn’t happen
 
 # Recursive method
 # Time Complexity: O(n)
