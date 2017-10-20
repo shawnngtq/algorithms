@@ -1,13 +1,13 @@
 def alphabeticShift(inputString):
-    alpha = [chr(i) for i in range(ord('a'), ord('z')+1)]
-    result = ''
-    for i in inputString:
-        result += alpha[(alpha.index(i)+1) % 26]
-    return result
+  alpha = [chr(i) for i in range(ord('a'), ord('z')+1)]
+  result = ''
+  for i in inputString:
+    result += alpha[(alpha.index(i)+1) % 26]
+  return result
 
 
 def alphabeticShift(inputString):
-	return "".join(chr((ord(i)-96)%26+97) for i in inputString)
+  return "".join(chr((ord(i)-96)%26+97) for i in inputString)
 
 
 # test 1
