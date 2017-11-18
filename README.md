@@ -1,3 +1,3 @@
 ## Algorithms-test
 
-My solutions to some of the interview questions
+My solutions to some of the algorithms questions
