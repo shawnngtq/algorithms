@@ -1,4 +1,6 @@
 def buildPalindrome(st):
+    if st == st[::-1]:
+        return st
     for i in range(len(st)):
         s = st + st[i::-1]
         if s == s[::-1]:
