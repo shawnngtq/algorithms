@@ -9,23 +9,23 @@ function DoublyLinkedList() {
   this.head = null;
 };
 
-DoublyLinkedList.prototype.push = function(data) {
+DoublyLinkedList.prototype.push = function (data) {
 
   var head = this.head;
   var current = head;
   var previous = head;
 
   // if there is no head
-  if(!head) {
-    this.head = {'data': data, 'previous': null, 'next': null};
+  if (!head) {
+    this.head = { 'data': data, 'previous': null, 'next': null };
   }
   else {
-    while(current.next) {
+    while (current.next) {
       previous = current;
       current = current.next;
     };
 
-    current.next = {'data': data, 'previous': current, 'next': null};
+    current.next = { 'data': data, 'previous': current, 'next': null };
   };
 };
 
@@ -41,7 +41,7 @@ function reverseDoublyLinkedList(dll) {
   var current = dll.head;
   var temp;
 
-  while(current) {
+  while (current) {
 
     // reverse the node sequence
     temp = current.next;
@@ -49,7 +49,7 @@ function reverseDoublyLinkedList(dll) {
     current.previous = temp;
 
     // when it is the last node
-    if(!temp) {
+    if (!temp) {
       // set last node as head
       dll.head = current;
     };
@@ -80,18 +80,18 @@ function deleteNodeDLL(dll, data) {
   var previous;
 
   // C1
-  if(current.data == data) {
+  if (current.data == data) {
     dll.head = current.next;
     // if there is only 1 node, the head will be null
-    if(dll.head) {
+    if (dll.head) {
       dll.head.previous = null;
     };
     return dll;
   };
 
   // C2
-  while(current.next) {
-    if(current.data == data) {
+  while (current.next) {
+    if (current.data == data) {
       previous.next = current.next;
       current.next.previous = previous;
       return dll;
@@ -102,7 +102,7 @@ function deleteNodeDLL(dll, data) {
   };
 
   // C3
-  if(current.data == data) {
+  if (current.data == data) {
     previous.next = null;
   };
 
