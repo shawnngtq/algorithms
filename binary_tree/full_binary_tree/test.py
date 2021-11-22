@@ -1,26 +1,27 @@
 # Time complexity: O(n)
 class Node:
-	def __init__(self, data):
-		self.data = data
-		self.left = None
-		self.right = None
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
 
 def isFullTree(root):
-	# Empty tree
-	if root is None:
-		return True
+    # Empty tree
+    if root is None:
+        return True
 
-	# Leaf node
-	if root.left is None and root.right is None:
-		return True
+    # Leaf node
+    if root.left is None and root.right is None:
+        return True
 
-	# current node has child node
-	# recur the child node
-	if root.left is not None and root.right is not None:
-		return isFullTree(root.left) and isFullTree(root.right)
+    # current node has child node
+    # recur the child node
+    if root.left is not None and root.right is not None:
+        return isFullTree(root.left) and isFullTree(root.right)
 
-	# Otherwise, it's not full tree
-	return False
+    # Otherwise, it's not full tree
+    return False
 
 
 root = Node(10)

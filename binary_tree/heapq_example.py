@@ -60,7 +60,7 @@ def find_path(map):
 def show_path(path, map):
     lines = map.splitlines()
     for x, y in path:
-        lines[y] = lines[y][:x] + "@" + lines[y][x + 1:]
+        lines[y] = lines[y][:x] + "@" + lines[y][x + 1 :]
     return "\n".join(lines) + "\n"
 
 

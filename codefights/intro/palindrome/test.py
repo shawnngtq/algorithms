@@ -1,6 +1,7 @@
 def checkPalindrome(inputString):
-  # method 1
-  return inputString == inputString[::-1]
+    # method 1
+    return inputString == inputString[::-1]
+
 
 inputString = "aabaa"
 print(checkPalindrome(inputString))

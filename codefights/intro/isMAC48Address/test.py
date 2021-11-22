@@ -1,22 +1,24 @@
 def isMAC48Address(inputString):
     for i in range(len(inputString)):
-        if (i%3 == 2):
-            if (inputString[i] != '-'):
+        if i % 3 == 2:
+            if inputString[i] != "-":
                 return False
         else:
-            if not ('0' <= inputString[i] <= '9' or 'A' <= inputString[i] <= 'F'):
+            if not ("0" <= inputString[i] <= "9" or "A" <= inputString[i] <= "F"):
                 return False
     return len(inputString) == 17
 
 
-
 def isMAC48Address(s):
-    return bool(re.match(('^' + '[\dA-F]{2}-' * 6)[:-1] + '$', s))
+    return bool(re.match(("^" + "[\dA-F]{2}-" * 6)[:-1] + "$", s))
 
 
 def isMAC48Address(inputString):
-    d = '[0-9A-F]'
-    m = re.match('{}{}-{}{}-{}{}-{}{}-{}{}-{}{}$'.format(d,d,d,d,d,d,d,d,d,d,d,d), inputString)
+    d = "[0-9A-F]"
+    m = re.match(
+        "{}{}-{}{}-{}{}-{}{}-{}{}-{}{}$".format(d, d, d, d, d, d, d, d, d, d, d, d),
+        inputString,
+    )
     if m:
         return True
     return False

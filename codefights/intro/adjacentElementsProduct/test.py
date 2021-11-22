@@ -1,9 +1,10 @@
 def adjacentElementsProduct(inputArray):
-  # method 1
-  return max([inputArray[i] * inputArray[i+1] for i in range(len(inputArray)-1)])
+    # method 1
+    return max([inputArray[i] * inputArray[i + 1] for i in range(len(inputArray) - 1)])
 
-  # method 2
-  # return max(a * b for a, b in zip(inputArray[:-1], inputArray[1:]))
+    # method 2
+    # return max(a * b for a, b in zip(inputArray[:-1], inputArray[1:]))
+
 
 inputArray = [3, 6, -2, -5, 7, 3]
 print(adjacentElementsProduct(inputArray))

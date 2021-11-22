@@ -1,14 +1,14 @@
 def variableName(name):
-  if name[0].isnumeric():
-    return False
-  for i in name:
-    if not(i.isalpha() or i.isnumeric() or i == '_'):
-      return False
-  return True
+    if name[0].isnumeric():
+        return False
+    for i in name:
+        if not (i.isalpha() or i.isnumeric() or i == "_"):
+            return False
+    return True
 
 
 def variableName(name):
-  return name.isidentifier()
+    return name.isidentifier()
 
 
 # test 1

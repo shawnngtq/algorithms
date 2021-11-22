@@ -1,8 +1,8 @@
 def chessBoardCellColor(cell1, cell2):
     darklist = []
     whitelist = []
-    for i in range(1,9):
-        for j in range(ord('A'), ord('H')+1):
+    for i in range(1, 9):
+        for j in range(ord("A"), ord("H") + 1):
             if i % 2 == 1:
                 if j % 2 == 1:
                     darklist.append(chr(j) + str(i))
@@ -18,7 +18,7 @@ def chessBoardCellColor(cell1, cell2):
         return True
     elif all(x in darklist for x in [cell1, cell2]):
         return True
-    else:        
+    else:
         return False
 
 

@@ -6,7 +6,7 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 def best_trade_brute_force(prices):
     maxprofit = 0
     for i in range(len(prices)):
-        for j in range(i+1, len(prices)):
+        for j in range(i + 1, len(prices)):
             profit = prices[j] - prices[i]
             if profit > maxprofit:
                 maxprofit = profit
@@ -15,6 +15,7 @@ def best_trade_brute_force(prices):
 
 def best_trade_one_pass(prices):
     import sys
+
     minprice = sys.maxsize
     maxprofit = 0
     for i in range(len(prices)):

@@ -5,10 +5,10 @@ def buildPalindrome(st):
         s = st + st[i::-1]
         if s == s[::-1]:
             return s
-    
+
 
 def buildPalindrome(st):
-    return re.sub(r'(\w+)\1', r'\1', st + st[::-1])
+    return re.sub(r"(\w+)\1", r"\1", st + st[::-1])
 
 
 def buildPalindrome(st):

@@ -12,7 +12,7 @@ class DoublyLinkedList:
     def __repr__(self):
         node = self.head
         nodes = []
-        while (node):
+        while node:
             nodes.append(str(node.data))
             node = node.next
         nodes.append(str(None))
@@ -20,7 +20,7 @@ class DoublyLinkedList:
 
     def __iter__(self):
         node = self.head
-        while (node):
+        while node:
             yield node
             node = node.next
 
@@ -34,7 +34,7 @@ class DoublyLinkedList:
     # insert
     def insert_after(self, target_node_data, new_node):
         for node in self:
-            if (node.data == target_node_data):
+            if node.data == target_node_data:
                 new_node.next = node.next
                 node.next = new_node
                 new_node.prev = node
@@ -47,7 +47,7 @@ class DoublyLinkedList:
             self.head = new_node
             return
         node = self.head
-        while (node.next):
+        while node.next:
             node = node.next
         node.next = new_node
         new_node.prev = node

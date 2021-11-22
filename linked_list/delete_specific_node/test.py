@@ -1,46 +1,47 @@
 class Node:
-  def __init__(self, data):
-    self.data = data
-    self.next = None
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
 
 class LinkedList:
+    def deleteNode(self, node1, node2):
 
-  def deleteNode(self, node1, node2):
+        # When node to be deleted is head node
+        if node1 == node2:
+            if node1.next is None:
+                return "There is only 1 node, the list can't be empty"
 
-    # When node to be deleted is head node
-    if(node1 == node2):
-      if(node1.next is None):
-        return "There is only 1 node, the list can't be empty"
+            # Copy the data of next node to head
+            node1.data = node1.next.data
 
-      # Copy the data of next node to head
-      node1.data = node1.next.data
+            # store address of next node
+            node2 = node1.next
 
-      # store address of next node
-      node2 = node1.next
+            # Remove the link of next node
+            node1.next = node1.next.next
+            return
 
-      # Remove the link of next node
-      node1.next = node1.next.next
-      return
+        # When not first node, follow the normal deletion process
+        # find the previous node
+        prev = node1
+        while prev.next and prev.next != node2:
+            prev = prev.next
 
-    # When not first node, follow the normal deletion process
-    # find the previous node
-    prev = node1
-    while(prev.next and prev.next != node2):
-      prev = prev.next
+        if prev.next is None:
+            print("The node to delete doesn't exist")
 
-    if(prev.next is None):
-      print('The node to delete doesn\'t exist')
+        prev.next = prev.next.next
+        return
 
-    prev.next = prev.next.next
-    return
+    def printList(self):
+        temp = []
+        current = self.head
+        while current:
+            temp.append(current.data)
+            current = current.next
+        print(temp)
 
-  def printList(self):
-    temp = []
-    current = self.head
-    while(current):
-      temp.append(current.data)
-      current = current.next
-    print(temp)
 
 llist = LinkedList()
 llist.head = Node(12)

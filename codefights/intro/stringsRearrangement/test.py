@@ -1,7 +1,8 @@
 import itertools
-def stringsRearrangement(inputArray):
 
-    def f(x,y):
+
+def stringsRearrangement(inputArray):
+    def f(x, y):
         c = 0
         for i in range(len(x)):
             if x[i] != y[i]:
@@ -12,18 +13,21 @@ def stringsRearrangement(inputArray):
 
     for k in itertools.permutations(inputArray, len(inputArray)):
         r = True
-        for i in range(len(k)-1):
-            if not f(k[i], k[i+1]):
+        for i in range(len(k) - 1):
+            if not f(k[i], k[i + 1]):
                 r = False
-        if r: 
+        if r:
             return True
-        
+
     return False
 
 
 from itertools import permutations
+
+
 def diff(w1, w2):
     return sum([a[0] != a[1] for a in zip(w1, w2)]) == 1
+
 
 def stringsRearrangement(inputArray):
     for z in permutations(inputArray):

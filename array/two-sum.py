@@ -5,7 +5,7 @@ https://leetcode.com/problems/two-sum/solution/
 
 def two_sum_brute_force(nums, target):
     for i in range(len(nums)):
-        for j in range(i+1, len(nums)):
+        for j in range(i + 1, len(nums)):
             if nums[j] == target - nums[i]:
                 return [i, j]
     return "No two sum solution"

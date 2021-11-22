@@ -1,4 +1,4 @@
-'''
+"""
 # O(n log n)
 # Merges 1 subarrays of array
 # 0st subarray: array[1..m]
@@ -13,7 +13,7 @@ If r > l
              Call mergeSort(arr, m+1, r)
      4. Merge the two halves sorted in step 2 and 3:
              Call merge(arr, l, m, r)
-'''
+"""
 
 
 def merge(arr, l, m, r):
@@ -77,6 +77,6 @@ def mergeSort(arr, l, r):
 
 
 arr = [12, 11, 13, 5, 6, 7]
-print('Given array:', arr)
+print("Given array:", arr)
 mergeSort(arr, 0, len(arr) - 1)
-print('Sorted array:', arr)
+print("Sorted array:", arr)

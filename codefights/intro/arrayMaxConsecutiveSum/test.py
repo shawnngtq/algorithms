@@ -1,10 +1,10 @@
 def arrayMaxConsecutiveSum(inputArray, k):
     c = m = sum(inputArray[:k])
-    
+
     for i in range(len(inputArray) - k):
         c = c + inputArray[i + k] - inputArray[i]
         m = max(c, m)
-        
+
     return m
 
 

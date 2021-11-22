@@ -1,17 +1,17 @@
 def firstDigit(inputString):
-  return re.findall('\d', inputString)[0]
+    return re.findall("\d", inputString)[0]
 
 
 def firstDigit(inputString):
-  result = re.search('\d', inputString)
-  if result != None:
-    return result.group()
+    result = re.search("\d", inputString)
+    if result != None:
+        return result.group()
 
 
 def firstDigit(inputString):
-  for i in inputString:
-    if i.isdigit():
-      return i
+    for i in inputString:
+        if i.isdigit():
+            return i
 
 
 # test

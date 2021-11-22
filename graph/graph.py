@@ -40,7 +40,7 @@ graph_elements = {
     "b": ["a", "d"],
     "c": ["a", "d"],
     "d": ["e"],
-    "e": ["d"]
+    "e": ["d"],
 }
 g = Graph(graph_elements)
 

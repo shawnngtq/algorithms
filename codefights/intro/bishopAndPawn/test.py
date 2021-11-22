@@ -1,15 +1,17 @@
 def bishopAndPawn(bishop, pawn):
-    bishop=[ord(bishop[0]),int(bishop[1])]
-    pawn=[ord(pawn[0]),int(pawn[1])]
-    return bishop[1]-bishop[0]==pawn[1]-pawn[0] or sum(bishop)==sum(pawn)
+    bishop = [ord(bishop[0]), int(bishop[1])]
+    pawn = [ord(pawn[0]), int(pawn[1])]
+    return bishop[1] - bishop[0] == pawn[1] - pawn[0] or sum(bishop) == sum(pawn)
 
 
 def bishopAndPawn(bishop, pawn):
-    return abs((ord(pawn[0])-ord(bishop[0]))/(int(pawn[1])-int(bishop[1]))) == 1
+    return abs((ord(pawn[0]) - ord(bishop[0])) / (int(pawn[1]) - int(bishop[1]))) == 1
 
 
 def bishopAndPawn(bishop, pawn):
-    return (ord(bishop[0]) + int(bishop[1]) == ord(pawn[0]) + int(pawn[1])) or (ord(bishop[0]) + int(pawn[1]) == ord(pawn[0]) + int(bishop[1]))
+    return (ord(bishop[0]) + int(bishop[1]) == ord(pawn[0]) + int(pawn[1])) or (
+        ord(bishop[0]) + int(pawn[1]) == ord(pawn[0]) + int(bishop[1])
+    )
 
 
 # test

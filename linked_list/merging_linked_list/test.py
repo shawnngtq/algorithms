@@ -1,47 +1,47 @@
 class Node:
-  def __init__(self, data):
-    self.data = data
-    self.next = None
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
-  def __init__(self):
-    self.head = None
+    def __init__(self):
+        self.head = None
 
-  def nodePush(self, data):
-    new_node = Node(data)
-    if(self.head is None):
-      self.head = new_node
-    else:
-      current = self.head
-      while(current.next):
-        current = current.next
-      current.next = new_node
+    def nodePush(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
 
-  def printList(self):
-    temp = []
-    current = self.head
-    while(current):
-      temp.append(current.data)
-      current = current.next
-    print(temp)
+    def printList(self):
+        temp = []
+        current = self.head
+        while current:
+            temp.append(current.data)
+            current = current.next
+        print(temp)
 
 
 def mergeLinkedList(list1, list2):
-  head1 = list1.head
-  head2 = list2.head
+    head1 = list1.head
+    head2 = list2.head
 
-  while(head1 and head2):
-    next1 = head1.next
-    next2 = head2.next
+    while head1 and head2:
+        next1 = head1.next
+        next2 = head2.next
 
-    head2.next = next1
-    head1.next = head2
+        head2.next = next1
+        head1.next = head2
 
-    head1 = next1
-    head2 = next2
+        head1 = next1
+        head2 = next2
 
-  list2.head = head2
+    list2.head = head2
 
 
 list1 = LinkedList()

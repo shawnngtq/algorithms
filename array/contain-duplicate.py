@@ -5,7 +5,7 @@ https://leetcode.com/problems/contains-duplicate/
 
 def contains_duplicate_naive_linear_search(nums):
     for i in range(len(nums)):
-        for j in range(i+1, len(nums)):
+        for j in range(i + 1, len(nums)):
             if nums[i] == nums[j]:
                 return True
     return False
@@ -13,8 +13,8 @@ def contains_duplicate_naive_linear_search(nums):
 
 def contains_duplicate_sorting(nums):
     nums.sort()
-    for i in range(len(nums)-1):
-        if nums[i] == nums[i+1]:
+    for i in range(len(nums) - 1):
+        if nums[i] == nums[i + 1]:
             return True
     return False
 

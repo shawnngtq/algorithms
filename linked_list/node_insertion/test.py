@@ -1,49 +1,50 @@
 # Python program to insert in sorted list
 class Node:
-  # constructor to initialize the node project
-  def __init__(self, data):
-    self.data = data
-    self.next = None
+    # constructor to initialize the node project
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
 
 class LinkedList:
-  # function to initialize head
-  def __init__(self):
-    self.head = None
+    # function to initialize head
+    def __init__(self):
+        self.head = None
 
-  def sortedInsert(self, new_node):
+    def sortedInsert(self, new_node):
 
-    # special case for empty linked list
-    if self.head is None:
-      self.head = new_node
+        # special case for empty linked list
+        if self.head is None:
+            self.head = new_node
 
-    # special case for head at end
-    elif self.head.data >= new_node.data:
-      new_node.next = self.head
-      self.head = new_node
+        # special case for head at end
+        elif self.head.data >= new_node.data:
+            new_node.next = self.head
+            self.head = new_node
 
-    else:
+        else:
 
-      # locate the node before point of insertion
-      current = self.head
-      while(current.next is not None and current.next.data < new_node.data):
-        current = current.next
+            # locate the node before point of insertion
+            current = self.head
+            while current.next is not None and current.next.data < new_node.data:
+                current = current.next
 
-      new_node.next = current.next
-      current.next = new_node
+            new_node.next = current.next
+            current.next = new_node
 
-  # function to insert new node at the beginning
-  def push(self,new_data):
-    new_node = Node(new_data)
-    new_node.next = self.head
-    self.head = new_node
+    # function to insert new node at the beginning
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
 
+    # utility function to prit the linked LinkedList
+    def printList(self):
+        temp = self.head
+        while temp:
+            print(temp.data),
+            temp = temp.next
 
-  # utility function to prit the linked LinkedList
-  def printList(self):
-    temp = self.head
-    while(temp):
-      print(temp.data),
-      temp = temp.next
 
 llist = LinkedList()
 new_node = Node(5)
