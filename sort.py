@@ -86,16 +86,48 @@ def insertion_sort(arr):
 print(insertion_sort([4, 3, 2, 10, 12, 1, 5, 6]))
 
 
-def merge_sort(list_):
-    """
-    split list using divide and conquer, then merge based on ascending value
-    """
+def merge_sort(arr):
+    if len(arr) > 1:
 
-    def merge(list1, list2):
-        list1 = sorted(list1)
-        list2 = sorted(list2)
+        # Finding the mid of the array
+        mid = len(arr) // 2
 
-    return
+        # Dividing the array elements
+        L = arr[:mid]
+
+        # into 2 halves
+        R = arr[mid:]
+
+        # Sorting the first half
+        merge_sort(L)
+
+        # Sorting the second half
+        merge_sort(R)
+
+        i = j = k = 0
+
+        # Copy data to temp arrays L[] and R[]
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+
+        # Checking if any element was left
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
 
 
-print(merge_sort([4, 3, 2, 10, 12, 1, 5, 6]))
+list_ = [4, 3, 2, 10, 12, 1, 5, 6]
+print(merge_sort(list_))
+print(list_)

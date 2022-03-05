@@ -15,8 +15,8 @@ class BinarySearchTree:
 
     def traverse(self, node):
         tree = {"data": node.data}
-        tree["left"] = None if not node.left else traverse(node.left)
-        tree["right"] = None if not node.right else traverse(node.right)
+        tree["left"] = None if not node.left else self.traverse(node.left)
+        tree["right"] = None if not node.right else self.traverse(node.right)
         return tree
 
     def insert(self, data):
@@ -91,7 +91,7 @@ class BinarySearchTree:
                     while left_most.left:
                         left_most_parent = left_most
                         left_most = left_most.left
-                    
+
                     # parent left subtree -> left most right subtree
                     left_most_parent.left = left_most.right
                     left_most.left = curr.left
@@ -114,12 +114,62 @@ class BinarySearchTree:
             else:
                 return "Data don't exist"
 
+    def breadth_first_search(self):
+        output, queue = [], []
+        curr = self.root
+        queue.append(curr)
+        while queue:
+            curr = queue.pop(0)
+            output.append(curr.data)
+            if curr.left:
+                queue.append(curr.left)
+            if curr.right:
+                queue.append(curr.right)
+        return output
 
-def traverse(node):
-    tree = {"data": node.data}
-    tree["left"] = None if not node.left else traverse(node.left)
-    tree["right"] = None if not node.right else traverse(node.right)
-    return tree
+    def breadth_first_search_recursive(self, output, queue):
+        if not queue:
+            return output
+        curr = queue.pop(0)
+        output.append(curr.data)
+        if curr.left:
+            queue.append(curr.left)
+        if curr.right:
+            queue.append(curr.right)
+        return self.breadth_first_search_recursive(output, queue)
+
+    def depth_first_search_in_order(self, node, output):
+        def traverse_in_order(node, output):
+            if node.left:
+                traverse_in_order(node.left, output)
+            output.append(node.data)
+            if node.right:
+                traverse_in_order(node.right, output)
+            return output
+
+        return traverse_in_order(node, output)
+
+    def depth_first_search_post_order(self, node, output):
+        def traverse_post_order(node, output):
+            if node.left:
+                traverse_post_order(node.left, output)
+            if node.right:
+                traverse_post_order(node.right, output)
+            output.append(node.data)
+            return output
+
+        return traverse_post_order(node, output)
+
+    def depth_first_search_pre_order(self, node, output):
+        def traverse_pre_order(node, output):
+            output.append(node.data)
+            if node.left:
+                traverse_pre_order(node.left, output)
+            if node.right:
+                traverse_pre_order(node.right, output)
+            return output
+
+        return traverse_pre_order(node, output)
 
 
 #       9
@@ -134,8 +184,18 @@ tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 
-print(tree.print_tree())
-# print(traverse(tree.root))
-print(tree.lookup(170).data)
-print(tree.lookup(50))
-print(tree.lookup(-1))
+print(f"tree: {tree.print_tree()}")
+print(f"170 exists: {tree.lookup(170).data}")
+print(f"50 exists: {tree.lookup(50)}")
+print(f"-1 exists: {tree.lookup(-1)}")
+print(f"breadth first search: {tree.breadth_first_search()}")
+print(
+    f"breadth first search recursive: {tree.breadth_first_search_recursive([], [tree.root])}"
+)
+print(f"depth first search in order: {tree.depth_first_search_in_order(tree.root, [])}")
+print(
+    f"depth first search post order: {tree.depth_first_search_post_order(tree.root, [])}"
+)
+print(
+    f"depth first search pre order: {tree.depth_first_search_pre_order(tree.root, [])}"
+)

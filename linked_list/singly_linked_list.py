@@ -37,7 +37,7 @@ class SinglyLinkedList:
             node = node.next
 
     # O(1)
-    def length(self):
+    def print_length(self):
         return self.length
 
     # insert at root
@@ -154,6 +154,19 @@ class SinglyLinkedList:
                 return
             previous_node = node
 
+    def reverse(self):
+        if not self.head:
+            return
+
+        previous_node = None
+        node = self.head
+        while node:
+            next_node = node.next
+            node.next = previous_node
+            previous_node = node
+            node = next_node
+        self.head = previous_node
+
 
 list1 = SinglyLinkedList()
 list1.head = Node(1)
@@ -210,5 +223,7 @@ print("Remove non-existance node version 2")
 list1.remove2(0.5)
 print(list1)
 
-print("length")
-list1.length()
+print(f"length: {list1.length}")
+
+list1.reverse()
+print(list1)
