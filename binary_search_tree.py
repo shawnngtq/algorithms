@@ -138,6 +138,15 @@ class BinarySearchTree:
             queue.append(curr.right)
         return self.breadth_first_search_recursive(output, queue)
 
+    # def depth_in_order(self, node, output):
+    #     if not node:
+    #         return output
+    #     if node.left:
+    #         return self.depth_in_order(node.left, output)
+    #     output.append(node.data)
+    #     if node.right:
+    #         return self.depth_in_order(node.right, output)
+
     def depth_first_search_in_order(self, node, output):
         def traverse_in_order(node, output):
             if node.left:
