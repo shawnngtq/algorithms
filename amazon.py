@@ -1,14 +1,27 @@
 # https://www.educative.io/blog/crack-amazon-coding-interview-questions
-def missing_number_in_array(arr):
+def find_missing(input):
+    sum_of_elements = sum(input)
+
+    # There is exactly 1 number missing
+    n = len(input) + 1
+    actual_sum = (n * (n + 1)) / 2
+    return actual_sum - sum_of_elements
+
+
+input = [3, 7, 1, 2, 8, 4, 5]
+print(find_missing(input))
+
+
+def find_missing(arr):
     maximum = max(arr)
     missing = sum(range(1, maximum + 1)) - sum(arr)
     return missing
 
 
 arr = [1, 2, 4, 5]
-print(missing_number_in_array(arr))
+print(find_missing(arr))
 arr = [3, 7, 1, 2, 8, 4, 5]
-print(missing_number_in_array(arr))
+print(find_missing(arr))
 
 
 def sum_of_two_int_equals_provided(arr, integer):

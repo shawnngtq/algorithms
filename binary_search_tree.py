@@ -1,3 +1,8 @@
+# full binary tree - all the nodes have 0 or two children
+# complete binary tree - all the levels are completely filled
+# binary tree vs binary search tree - https://www.geeksforgeeks.org/difference-between-binary-tree-and-binary-search-tree/
+
+
 class Node:
     def __init__(self, data):
         self.left = None
@@ -178,7 +183,24 @@ class BinarySearchTree:
                 traverse_pre_order(node.right, output)
             return output
 
+        def traverse_pre_order(node, output):
+            if node:
+                output.append(node.data)
+                traverse_pre_order(node.left, output)
+                traverse_pre_order(node.right, output)
+            return output
+
         return traverse_pre_order(node, output)
+
+    def depth(self):
+        def dfs(node, number):
+            if not node:
+                return number
+            else:
+                return max(dfs(node.left, number + 1), dfs(node.right, number + 1))
+
+        node = self.root
+        return dfs(node, 0)
 
 
 #       9
@@ -208,3 +230,4 @@ print(
 print(
     f"depth first search pre order: {tree.depth_first_search_pre_order(tree.root, [])}"
 )
+print(tree.depth())

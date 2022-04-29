@@ -1,4 +1,9 @@
-class Graph:
+# list of edges
+# adjacentlist
+# adjacentmatrix
+
+
+class GraphAdjacentList:
     def __init__(self) -> None:
         self.adjacent_list = {}
         self.number_of_nodes = 0
@@ -22,8 +27,13 @@ class Graph:
         self.adjacent_list[node2].append(node1)
         return self
 
+    def remove_edge(self, node1, node2):
+        self.adjacent_list[node1].remove(node2)
+        self.adjacent_list[node2].remove(node1)
+        return self
 
-graph = Graph()
+
+graph = GraphAdjacentList()
 graph.add_node(0)
 graph.add_node(1)
 graph.add_node(2)
@@ -39,4 +49,6 @@ graph.add_edge(3, 4)
 graph.add_edge(4, 2)
 graph.add_edge(4, 5)
 graph.add_edge(6, 0)
+print(graph)
+graph.remove_edge(0, 6)
 print(graph)
