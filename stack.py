@@ -1,9 +1,5 @@
-"""
-Stack - List
-LIFO
-"""
-
-
+# LIFO
+# Stack - List
 class Stack:
     def __init__(self):
         self.array = []
@@ -34,8 +30,8 @@ s.push("discord")
 
 print("## Info")
 print(s)
-print(s.peek())
-s.print_length()
+print(f"peek: {s.peek()}")
+print(s.print_length())
 
 print("## pop")
 s.pop()
@@ -43,12 +39,8 @@ print(s)
 print()
 
 
-"""
-Stack - LinkedList
-LIFO
-"""
-
-
+# Stack - LinkedList
+# LIFO
 class Node:
     def __init__(self, data):
         self.data = data
@@ -102,7 +94,7 @@ s.push("discord")
 
 print("## Info")
 print(s)
-print(s.peek())
+print(f"peek: {s.peek()}")
 # print(s.length)
 s.print_length()
 print(s.top.data)
