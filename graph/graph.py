@@ -23,7 +23,7 @@ class Graph:
             self.gdict[vertex] = []
             print(f"{vertex} added.")
 
-    def add_edge(self, edge):
+    def add_matrix_edge(self, edge):
         edge = set(edge)
         (vertex1, vertex2) = tuple(edge)
         if vertex1 in self.gdict:
@@ -58,7 +58,74 @@ print(g.add_vertex("f"))
 print(g.print_vertices())
 
 print("Add Edge:")
-print(g.add_edge({"a", "e"}))
-print(g.add_edge({"a", "c"}))
+print(g.add_matrix_edge({"a", "e"}))
+print(g.add_matrix_edge({"a", "c"}))
 print(g.print_edges())
 print(g.print_dict())
+
+
+class Graph:
+    """
+    Reference
+    ---------
+    https://www.geeksforgeeks.org/introduction-to-graphs-data-structure-and-algorithm-tutorials/
+    """
+
+    def __init__(self, number_of_vertices):
+        self.number_of_vertices = number_of_vertices
+        self.matrix = [[0] * number_of_vertices for i in range(number_of_vertices)]
+        self.list = [[] for _ in range(number_of_vertices)]
+
+    def can_create_edge(self, i, j):
+        if i >= self.number_of_vertices or j >= self.number_of_vertices:
+            print("Vertex don't exist")
+            return False
+        if i == j:
+            print("Vertex can't connect itself")
+            return False
+        return True
+
+    def add_matrix_edge(self, i, j):
+        if self.can_create_edge(i, j):
+            self.matrix[i][j] = 1
+            self.matrix[j][i] = 1
+
+    def add_matrix_vertex(self):
+        self.number_of_vertices += 1
+        for row in self.matrix:
+            row.append(0)
+        self.matrix.append([0] * self.number_of_vertices)
+
+    def display_adjacent_matrix(self):
+        print("Adjacent Matrix")
+        for row in self.matrix:
+            print(" ".join(map(str, row)))
+
+    def add_list_edge(self, i, j):
+        if self.can_create_edge(i, j):
+            self.list[i].append(j)
+            self.list[j].append(i)
+
+    def add_list_vertex(self):
+        self.number_of_vertices += 1
+        self.list.append([])
+
+    def display_adjacent_list(self):
+        print("Adjacent List")
+        for i, row in enumerate(self.list):
+            print(f"{i}: {" ".join(map(str, row))}")
+
+
+matrix = Graph(4)
+matrix.add_matrix_edge(0, 1)
+matrix.add_matrix_edge(0, 2)
+matrix.add_matrix_edge(1, 2)
+matrix.add_matrix_edge(2, 3)
+matrix.add_matrix_vertex()
+matrix.display_adjacent_matrix()
+matrix.add_list_edge(0, 1)
+matrix.add_list_edge(0, 2)
+matrix.add_list_edge(1, 2)
+matrix.add_list_edge(2, 3)
+matrix.add_list_vertex()
+matrix.display_adjacent_list()
