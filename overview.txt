@@ -1,4 +1,0 @@
-array
-    - sliding windows
-
-fibonacci number
