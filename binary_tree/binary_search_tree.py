@@ -153,6 +153,8 @@ class BinarySearchTree:
     #         return self.depth_in_order(node.right, output)
 
     def depth_first_search_in_order(self, node, output):
+        """left -> root -> right"""
+
         def traverse_in_order(node, output):
             if node.left:
                 traverse_in_order(node.left, output)
@@ -164,6 +166,8 @@ class BinarySearchTree:
         return traverse_in_order(node, output)
 
     def depth_first_search_post_order(self, node, output):
+        """left -> right -> root"""
+
         def traverse_post_order(node, output):
             if node.left:
                 traverse_post_order(node.left, output)
@@ -175,6 +179,8 @@ class BinarySearchTree:
         return traverse_post_order(node, output)
 
     def depth_first_search_pre_order(self, node, output):
+        """root -> left -> right"""
+
         def traverse_pre_order(node, output):
             output.append(node.data)
             if node.left:
